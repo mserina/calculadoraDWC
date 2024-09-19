@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculadora</h1>
+    
+    <form id="baseCalculadora">
+        
+        <div id="inputContainer">
+            <!-- Corregido para evitar ID duplicados -->
+            <input type="number" name="numero1" id="numero1" placeholder="Número 1">
+            <input type="text" name="operador" id="operador" placeholder="Operador (+, -, *, /)">
+            <input type="number" name="numero2" id="numero2" placeholder="Número 2">
+        </div>
+        
+        <!--Se le pone el tipo boton, para evitar que haga la accion del submit (recargando la pagina en consecuencia)-->
+        <button type="button" onclick="mostrarValor(event)">Enviar</button>
+
+        <p id="tituloResultado">RESULTADO</p>
+        <p id="Resultado"></p>
+    </form> 
+
+    
+    
+    <script src="js.js"></script>    
+</body>
+</html>
