@@ -5,28 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <h1>Calculadora</h1>
     
-    <form id="baseCalculadora">
-        
-        <div id="inputContainer">
-            <!-- Corregido para evitar ID duplicados -->
-            <input type="number" name="numero1" id="numero1" placeholder="Número 1">
-            <input type="text" name="operador" id="operador" placeholder="Operador (+, -, *, /)">
-            <input type="number" name="numero2" id="numero2" placeholder="Número 2">
+    <div class="container text-center">
+        <div class="row">
+          <div id="baseCalculadora" class="col bg-secondary">
+                <input type="number" name="numero1" id="numero1" placeholder="Número 1">
+                <input type="text" name="operador" id="operador" placeholder="Operador (+, -, *, /)">
+                <input type="number" name="numero2" id="numero2" placeholder="Número 2">
+                
+                <!--Se le pone el tipo boton, para evitar que haga la accion del submit (recargando la pagina en consecuencia)-->
+                <button type="button" onclick="mostrarValor(event)">Enviar</button>
+
+                <p id="tituloResultado">RESULTADO</p>
+                <p id="Resultado" class="bg-primary w-100"></p>
+
+                <p id="tituloResultado">HISTORIAL</p>
+                
+                <ul id="listaHistorial" class="list-group">
+                    <!--Aqui se encargara javaScript de poner los " li "-->
+                </ul>
+            </div> 
         </div>
-        
-        <!--Se le pone el tipo boton, para evitar que haga la accion del submit (recargando la pagina en consecuencia)-->
-        <button type="button" onclick="mostrarValor(event)">Enviar</button>
-
-        <p id="tituloResultado">RESULTADO</p>
-        <p id="Resultado"></p>
-    </form> 
-
-    
+    </div>
     
     <script src="js.js"></script>    
 </body>
 </html>
+
+
+

@@ -1,10 +1,13 @@
 
-
 //Para que funcione el event, debemos poner de parametro "event", lo mismo con la llamada del metodo en el html (onclick)
+
+var resultadosLista = [];
+
 function mostrarValor(event) {
 
     event.preventDefault(); // Evita el envío del formulario
     let resultado;
+    let operacionMasResultado;
 
     // Obtener los valores de los inputs
 
@@ -28,9 +31,9 @@ function mostrarValor(event) {
     }
 
 
+
     //Operaciones (dependiendo del signo elegido)
     if(operador == "+"){
-
         resultado = numero1 + numero2;
         document.getElementById("Resultado").innerHTML = resultado;
     }
@@ -42,15 +45,39 @@ function mostrarValor(event) {
 
     if(operador == "*"){
         resultado = numero1 * numero2;
+       
         document.getElementById("Resultado").innerHTML = resultado;
     }
 
     if(operador == "/"){
         resultado = numero1 / numero2;
+       
         document.getElementById("Resultado").innerHTML = resultado;
     }
         
+    //El resultado de la operacion
     document.getElementById("Resultado").innerHTML = resultado;
+
+    const operacionCompleta = `${numero1} ${operador} ${numero2} = ${resultado}`;
+    resultadosLista.push(operacionCompleta);
+
+    resultadosLista.forEach(function(resultado){
+        
+        console.log(numero1 + " " + operador + " " + numero2 + " = " + resultado);
+    });
     
+    actualizarHistorial();
+}
+
+function actualizarHistorial() {
+    const listaHistorial = document.getElementById("listaHistorial");
+    listaHistorial.innerHTML = "";  // Limpiar la lista antes de volver a llenar
+
+    resultadosLista.forEach(function(resultados) {
+        const li = document.createElement("li"); //Para crear la etiqueta "li"
+        li.textContent = resultados; //Para insertar el resultado en la lista
+        li.classList.add("list-group-item");  // Añadir clase de Bootstrap
+        listaHistorial.appendChild(li); //Para añadir el elemento li, dentro de la clase donde se encuentra el id (en la etiqueta ul)
+    });
 }
 
