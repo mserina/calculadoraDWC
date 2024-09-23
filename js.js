@@ -75,7 +75,7 @@ function actualizarHistorial() {
 
     resultadosLista.forEach(function (resultados) {
         const li = document.createElement("li"); //Para crear la etiqueta "li"
-        li.textContent =    ; //Para insertar el resultado en la lista
+        li.textContent = resultados; //Para insertar el resultado en la lista
         li.classList.add("list-group-item");  // Añadir clase de Bootstrap
         listaHistorial.appendChild(li); //Para añadir el elemento li, dentro de la clase donde se encuentra el id (en la etiqueta ul)
     });

@@ -12,19 +12,26 @@
     
     <div class="container text-center">
         <div class="row">
-          <div id="baseCalculadora" class="col bg-secondary">
-                <input type="number" name="numero1" id="numero1" placeholder="Número 1">
-                <input type="text" name="operador" id="operador" placeholder="Operador (+, -, *, /)">
-                <input type="number" name="numero2" id="numero2" placeholder="Número 2">
+          <div id="baseCalculadora" class="col bg-secondary rounded-4">
+                <input class="rounded-4" type="number" name="numero1" id="numero1" placeholder="Número 1">
+                <select class="rounded-4" name="simbolos" id="operador">
+                    <option value="+">suma</option>
+                    <option value="-">resta</option>
+                    <option value="*">multiplicacion</option>
+                    <option value="/">division</option>
+                </select>
+                <input class="rounded-4" type="number" name="numero2" id="numero2" placeholder="Número 2">
                 
                 <!--Se le pone el tipo boton, para evitar que haga la accion del submit (recargando la pagina en consecuencia)-->
-                <button type="button" onclick="mostrarValor(event)">Enviar</button>
-
-                <p id="tituloResultado">RESULTADO</p>
-                <p id="Resultado" class="bg-primary w-100"></p>
-
-                <p id="tituloResultado">HISTORIAL</p>
+                <br>
+                <br>
+                <button class="rounded-4" type="button" onclick="mostrarValor(event)">Enviar</button>
                 
+                <h4 class="mt-3 " id="tituloResultado">RESULTADO</h4>
+                <h5 id="Resultado" class="rounded-4"></h5>
+
+                <br>
+                <h4 id="tituloResultado">HISTORIAL</h4>
                 <ul id="listaHistorial" class="list-group">
                     <!--Aqui se encargara javaScript de poner los " li "-->
                 </ul>
