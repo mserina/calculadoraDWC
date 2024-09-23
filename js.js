@@ -27,45 +27,45 @@ function mostrarValor(event) {
     }
     if (operador !== "+" && operador !== "-" && operador !== "*" && operador !== "/") {
         alert("Por favor, ingrese un operador válido (+, -, *, /).");
-        return;  
+        return;
     }
 
 
 
     //Operaciones (dependiendo del signo elegido)
-    if(operador == "+"){
+    if (operador == "+") {
         resultado = numero1 + numero2;
         document.getElementById("Resultado").innerHTML = resultado;
     }
 
-    if(operador == "-"){
+    if (operador == "-") {
         resultado = numero1 - numero2;
         document.getElementById("Resultado").innerHTML = resultado;
     }
 
-    if(operador == "*"){
+    if (operador == "*") {
         resultado = numero1 * numero2;
-       
+
         document.getElementById("Resultado").innerHTML = resultado;
     }
 
-    if(operador == "/"){
+    if (operador == "/") {
         resultado = numero1 / numero2;
-       
+
         document.getElementById("Resultado").innerHTML = resultado;
     }
-        
+
     //El resultado de la operacion
     document.getElementById("Resultado").innerHTML = resultado;
 
     const operacionCompleta = `${numero1} ${operador} ${numero2} = ${resultado}`;
     resultadosLista.push(operacionCompleta);
 
-    resultadosLista.forEach(function(resultado){
-        
+    resultadosLista.forEach(function (resultado) {
+
         console.log(numero1 + " " + operador + " " + numero2 + " = " + resultado);
     });
-    
+
     actualizarHistorial();
 }
 
@@ -73,9 +73,9 @@ function actualizarHistorial() {
     const listaHistorial = document.getElementById("listaHistorial");
     listaHistorial.innerHTML = "";  // Limpiar la lista antes de volver a llenar
 
-    resultadosLista.forEach(function(resultados) {
+    resultadosLista.forEach(function (resultados) {
         const li = document.createElement("li"); //Para crear la etiqueta "li"
-        li.textContent = resultados; //Para insertar el resultado en la lista
+        li.textContent =    ; //Para insertar el resultado en la lista
         li.classList.add("list-group-item");  // Añadir clase de Bootstrap
         listaHistorial.appendChild(li); //Para añadir el elemento li, dentro de la clase donde se encuentra el id (en la etiqueta ul)
     });
